@@ -1,0 +1,13 @@
+const http = require('http');
+
+const invokeRequest = (request, response) => {
+	response.writeHead(200, {'Content-Type': 'text/html'});
+	response.write('<h1>Hello World!</h1>');
+	response.end();
+}
+const server = http.createServer(invokeRequest);
+
+const serverStarted = () => {
+	console.log('Servidor Hello World rodando!');
+}
+server.listen(3000, serverStarted);
